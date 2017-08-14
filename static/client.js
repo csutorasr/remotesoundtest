@@ -19,3 +19,7 @@ socket.on('getType', () => {
     socket.emit('setType', 'client');
     setName();
 });
+
+socket.on('playSound', () => {
+    synth.triggerAttackRelease("C5", "2m");
+});

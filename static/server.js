@@ -22,6 +22,9 @@ socket.on('clients', (clients) => {
         const button = document.createElement("BUTTON");
         button.innerHTML = client.name;
         button.id = client.id;
+        button.addEventListener('click', () => {
+            socket.emit('playSoundOnClient', client.id);
+        });
         clientsDiv.appendChild(button);
     });
 });

@@ -72,5 +72,11 @@ io.on('connection', (socket) => {
             sendClients();
         }
     });
+    socket.on('playSoundOnClient', (id) => {
+        const selectedClients = clients.filter(x => x.id === id);
+        if (selectedClients.length !== 0) {
+            selectedClients[0].socket.emit('playSound', 'client');
+        }
+    })
     socket.emit('getType', 'client');
 });
