@@ -12,7 +12,12 @@
     <p>
         <a href="/">Back</a>
     </p>
+    <form onsubmit="setName(); return false;">
+        <input type="text" name="name" id="name" value="Client" />
+        <input type="submit" />
+    </form>
     <script src="/Tone.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
     <script src="/client.js"></script>
 </body>
 
